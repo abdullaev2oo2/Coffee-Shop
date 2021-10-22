@@ -1,3 +1,4 @@
+/*       */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
 :root{
@@ -20,13 +21,13 @@
     transition: .2s linear;
 }
 
-/* html{
+html{
     overflow-x: hidden;
     scroll-padding-top: 9rem;
     scroll-behavior: smooth;
-} */
-
-/* html::-webkit-scrollbar{
+}
+                                /* Scrollbar */
+html::-webkit-scrollbar{
     width: .8rem;
 }
 
@@ -37,7 +38,7 @@ html::-webkit-scrollbar-track{
 html::-webkit-scrollbar-thumb{
     background: #fff;
     border-radius: 5rem;
-} */
+}
                                 /* Header section */
 .container{
     max-width: 85%;
@@ -59,6 +60,7 @@ html::-webkit-scrollbar-thumb{
     height: auto;
     place-items: center;
     
+
 }
 .header__nav ul{
     display: flex;
@@ -89,17 +91,19 @@ html::-webkit-scrollbar-thumb{
 .nav__logo{
     height: 5rem;
 }
-#cart-icon, #search-icon{
+#cart-icon, #search-icon, .fa-bars{
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
     margin: 0 .5rem;
 }
-#cart-icon:hover, #search-icon:hover{
+.fa-bars{
+    display: none;
+}
+#cart-icon:hover, #search-icon:hover, .fa-bars:hover{
     color: var(--main-color);
 }
-
-                                    /* Main section */
+/* Main section */
 .main{
     min-height: 100vh;
     background: url(/images/home-img.jpeg);
@@ -116,7 +120,7 @@ html::-webkit-scrollbar-thumb{
 .content {
     max-width: 35rem;
 } 
-.content h3 {
+.main .content h3 {
     display: block;
     color: white;
     font-size: 3.7rem;
@@ -141,8 +145,7 @@ html::-webkit-scrollbar-thumb{
     background-color: var(--main-color-hovered);
     color: black;
 }
-
-                                                /* About US  */
+/* About US  */
 body{
     background: #000;
 }
@@ -152,13 +155,15 @@ body{
     color: #fff;
     font-size: 2.5rem;
     padding-bottom: 2rem;
+    text-transform: uppercase;
+    margin-top: 2rem
 }
 span{
     color: var(--main-color);
+    text-transform: uppercase;
 }
 .about .row{
     display: flex;
-    /* flex-wrap: wrap; */
     align-items: center;
     background-color: var(--black);
 }
@@ -200,14 +205,14 @@ span{
     background-color: var(--main-color-hovered);
     color: black;
 }
-                                                /*  Our Menu  */
+/*  Our Menu  */
 .menu__title{
     text-align: center;
     display: block;
     color: #fff;
     font-size: 2.5rem;
     padding-bottom: 2rem;
-    margin-top: 2rem
+    
 }
 .box__container{
     display: grid;
@@ -217,17 +222,17 @@ span{
 .box{
     background-color: var(--bg);
     border: var(--border);
-    padding: 5rem;
+    padding: 4.5rem;
     text-align: center;
 }
-.box img {
+.menu .box img {
     margin-top: -2rem;
     height: 6rem;
 }
 .box h3{
     margin-top: .5rem;
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 .box .price {
     margin-top: .8rem;
@@ -241,7 +246,7 @@ span{
     color: #fff;
     font-weight: lighter;
 }
-.btn{
+.menu .btn, .contacts .btn, .blog .btn{
     color: white;
     background-color: var(--main-color);
     display: inline-block;
@@ -249,16 +254,282 @@ span{
     top: 1rem;
     padding: .7rem 1.9rem;
 }
-.btn:hover{
+.menu .btn:hover{
     background-color: var(--main-color-hovered);
 }
-.box:hover{
+.menu .box:hover{
     background: #fff;
 }
-.box:hover > * {
+.menu .box:hover > * {
     color: var(--bg);
 }
-.box:hover > .price span {
+.menu .box:hover > .price span {
     color: #111;
     font-weight: 400;
+}
+/* Products */
+.products .box{
+    padding: 1rem;
+    
 } 
+.products .icons{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.products .icons a{
+    position: relative;
+    height: 3rem;
+    width: 3rem;
+    margin: .3rem;
+    font-size: 1.4rem;
+    line-height: 3rem;
+    color: white;
+    cursor: pointer;
+    border: var(--border); 
+}
+.products .icons a:hover{
+    background-color: var(--main-color);
+    color: var(--bg);
+}
+.products img{
+    height: 16rem;
+    margin: 1rem;
+}
+.products .stars{
+    display: inline-block;
+    color: var(--main-color);
+    margin: 1rem;
+}
+.products .price {
+    color: white;
+}
+/* Review Section */
+.review .box {
+    padding: 2rem;
+}
+.review p {
+    font-size: .9rem;
+    color: #bbb;
+    line-height: 1.5rem;
+    margin: 1rem;
+}
+.review__image img{
+    border-radius: 50%;
+    height: 5rem;
+}
+.review .img{
+    margin: 1rem;
+}
+.review .stars{
+    display: inline-block;
+    color: var(--main-color);
+    margin-top: 1rem;
+}
+/* Contact US */
+.contacts .row{
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+}
+.contacts .row .about__left{
+    flex: 1 1 45rem;
+}
+.contacts .map {
+    position: relative;
+    width: 100%;
+    height: 30rem;
+    z-index: 3;
+    top: 0;
+    left: 0;
+}
+
+.contacts .row .about__content{
+    flex: 1 1 45rem;
+}
+.contacts .btn:hover{
+    color: black;
+}
+.contacts .about__content{
+    margin: 2rem 1rem;
+    text-align: center;
+}
+.inputBox{
+    display: flex;
+    align-items: center;
+    margin: 2rem;
+    background-color: var(--bg);
+    border: var(--border);
+    padding: 0 1.5rem; 
+}
+.inputBox span {
+    font-size: 1.3rem;
+}
+.inputBox input{
+    color: white;
+    width: 100%;
+    background: none;
+    padding: 1.3rem;
+    text-transform: none;
+    font-size: 1.2rem;
+}
+
+/* Our Blogs */
+.blog .box{
+    margin: 1rem 0;
+    padding: 0;
+    padding-bottom: 1rem;
+    text-align: left;
+}
+.blog .box .image{
+    width: 100%;
+    overflow: hidden;
+    height: 15rem;
+    position: relative;
+}
+.blog .box .image img {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 10rem;
+}
+.blog .blog__content{
+    padding: 1rem;
+}
+.blog__link {
+    font-size: 1.5rem;
+    line-height: 3rem;
+    color: white;
+}
+.blog__link:hover{
+    color: var(--main-color);
+}
+.blog .btn:hover{
+    background-color: var(--main-color-hovered);
+    color: var(--bg);
+}
+.blog .blog__content p {
+    color: white;
+    line-height: 3rem;
+}
+/* Footer */
+.footer {
+    background-color: var(--black);
+    position: relative;
+    text-align: center;
+    padding: 1.5rem;
+}
+.footer .icons{
+    display: flex;
+    justify-content: center;
+}
+.footer .icons a {
+    position: relative;
+    height: 3rem;
+    width: 3rem;
+    margin: .3rem;
+    font-size: 1.4rem;
+    line-height: 3rem;
+    color: white;
+    cursor: pointer;
+    border: var(--border);
+    border-radius: 50%;
+    transition: .7s ease;
+}
+.footer .icons a:hover{
+    background-color: var(--main-color);
+    color: var(--bg);
+    transform: rotate(360deg);
+}
+.footer ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+.footer ul li {
+    padding: .5rem 1.5rem;
+    border: var(--border);
+    margin: 1.5rem .2rem;
+    transition: .7s ease;
+}
+.footer ul li a{
+    color: white;
+    font-size: 1.3rem;
+}
+.footer ul li:hover{
+    color: var(--bg);
+    background-color: var(--main-color);
+}
+.footer p{
+    color: white;
+    font-weight: lighter;
+    font-size: 1.3rem;
+}
+.footer p span {
+    font-weight: bolder;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+}
+@media only screen and (max-width: 900px){
+    :root{
+        font-size: 13px;
+    }
+    /* burger and navigation */
+    .header__nav{
+        display: none;
+    }
+    .fa-bars{
+        display: inline-block;
+    }
+    /* fixed version of About US for 900px */
+    .about .row{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: var(--black);
+        padding-bottom: 4rem;
+        text-align: center;
+    }
+    /* Fixed version of Contact Us for 900px */
+    .contacts .row{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: var(--black);
+    }
+    .contacts .btn{
+        color: white;
+        background-color: var(--main-color);
+        display: inline-block;
+        position: relative;
+        padding: 1rem 3rem;
+        font-size: 1.5rem;
+        top: 0;
+    }
+    .nav__logo img{
+        height: 5rem;
+
+    }
+}
+@media only screen and (max-width: 768px){
+    .main{
+        background-position: left;
+    }
+    .main .content {
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+    }
+    .main .content h3{
+        font-size: 2rem;
+    }
+    .footer ul {
+        display: grid;
+    }
+    .footer ul li {
+        padding: .5rem;
+        margin: .2rem;
+    }
+}
