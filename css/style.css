@@ -457,7 +457,7 @@ span{
     padding: .5rem 1.5rem;
     border: var(--border);
     margin: 1.5rem .2rem;
-    transition: .7s ease;
+    transition: .7s ease;    
 }
 .footer ul li a{
     color: white;
@@ -502,7 +502,7 @@ span{
     margin: 0 auto;   
 }
 .mobile__nav li {
-    padding: 2rem 5rem;
+    padding: 1.5rem 4rem;
     margin: 1rem;
     border: var(--border);
     font-size: 1.5rem;
@@ -517,7 +517,7 @@ span{
     color:var(--main-color-hovered);
     text-transform: uppercase;
 }
-.fullscreen__nav.open {
+.fullscreen__nav.open{
     display: flex;
 }
 /* Search input */
@@ -542,6 +542,56 @@ span{
 }
 .main .inputBox span:hover {
     color: var(--main-color);
+}
+/* Cart opened */
+.main__cart{
+    position: absolute;
+    height: 90vh;
+    top: 10vh;
+    right: 0;
+    background-color: #fff;
+    padding: 1rem;
+    text-align: center;
+    display: none;
+}
+.main__cart .main__cart-box {
+    display: flex;
+    width: 20rem;
+    position: relative;
+    padding: 0.5rem 0;
+}
+.main__cart .main__cart-box img {
+    height: 5rem;
+}
+.main__cart .main__cart-box .box__content{
+    margin: 1rem;
+}
+.main__cart .main__cart-box .box__content h3{
+    font-size: 1.3rem;
+    margin-bottom: .5rem;
+}
+.main__cart .main__cart-box .box__content p{
+    color: var(--main-color);
+    font-size: .9rem;
+}
+.main__cart .main__cart-box span {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    font-size: 1.3rem;
+}
+.main__cart .btn {
+    background-color: var(--main-color);
+    color: white;
+    text-decoration: none;
+    padding: .6rem 2rem;
+    display: inline-block;
+    margin: 1rem;
+    font-size: 1.2rem;
+}
+.main__cart .btn:hover {
+    color: black;
+    background: var(--main-color-hovered);
 }
 @media only screen and (max-width: 900px){
     :root{
@@ -581,7 +631,6 @@ span{
     }
     .nav__logo img{
         height: 5rem;
-
     }
 }
 @media only screen and (max-width: 768px){
@@ -622,6 +671,13 @@ span{
         text-align: center;
     }
     .main .inputBox{
-        height: .1rem;
+        height: 4.5rem;
+        padding: 0 1.5rem;
+        top: 13%;
+        left: 5%;
+        width: 90%;
+    }
+    .main .inputBox input {
+        display: inline;
     }
 }
